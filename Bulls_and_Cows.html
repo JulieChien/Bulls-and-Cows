@@ -7,17 +7,19 @@
     <body>
         <h1>Bulls and Cows</h1>
         <h3>Discover the secret number!</h3>
-        <p>The secret number of a 4-digit code.</p>
-        <p>And each digit will not repeat.</p>
-        <p>Bulls = correct code and correct position.</p>
-        <p>Cows = correct number but wrong position.</p>
+        <p>The secret number is a 4-digit code.<br>
+           And each digit will not repeat.<br>
+           Bulls = correct code and correct position.<br>
+           Cows = correct number but wrong position.
+        </p>
         <form>
             <input autofocus id = "code" placeholder="Guess the number!" type = "text">
-            <input type="submit" vlue = "submit">
+            <input id = "submit" type="submit" vlue = "submit">
+            <input id = "refresh_btn"type="button" value="refresh">
         </form>
-        <button>Refresh</button>
+
         <div id = "grid">
-            <div class = "grid-item"><br></div>
+            <div class = "grid-item">Try</div>
             <div class="grid-item">Your Number</div>
             <div class="grid-item">Result</div>
 
