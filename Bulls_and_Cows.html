@@ -2,8 +2,7 @@
 <html lang="en">
     <head>
         <title>Bulls and Cows</title>
-        <link rel = "stylesheet" href="Bulls_and_Cows.css">
-        <script src = "Bulls_and_Cows.js"></script>
+        <link rel = "stylesheet" href="Bulls_and_Cows.css">        
     </head>
     <body>
         <h1>Bulls and Cows</h1>
@@ -13,11 +12,11 @@
            Bulls = correct code and correct position.<br>
            Cows = correct number but wrong position.
         </p>
-        <form>
+        <div id = "form">
             <input id = "code" placeholder="Guess the number!" type = "text">
             <input id = "submit_btn" type="submit">
             <input id = "refresh_btn" type="button" value="refresh">
-        </form>
+        </div>
 
         <div id = "grid">
             <div class = "grid-item">Try</div>
@@ -25,6 +24,7 @@
             <div class="grid-item">Result</div>
 
         </div>
+        <script src = "Bulls_and_Cows.js"></script>
     </body>
 
 </html>
