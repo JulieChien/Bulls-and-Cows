@@ -9,15 +9,17 @@ document.addEventListener('DOMContentLoaded', function(){
         } else {
             document.querySelector('#submit').disabled = true;
         }
-    }
+    } 
+})
 
-    document.querySelector('form').onsubmit =() => {
-        const code = document.querySelector('#code').value;
-        const grid_item = document.createElement('div'); 
-        grid_item.innerHTML = code;    
-        document.querySelector('#grid').append(grid_ietm);
-        document.querySelector('#code').value = "";
+const submit_btn = document.getElementById('submit_btn');
+const code = document.getElementById('code');
+const grid = document.getElementById('gird');
 
-        return false;
-    }
+submit_btn.addEventListener("click", () => {
+    const grid_item = document.createElement('div');
+    grid_item.innerHTML = code.value;
+    grid.appendChild(grid_item);
+    code.value = "";
+
 })
