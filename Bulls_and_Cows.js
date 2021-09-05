@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 
-//console.log(RandomCode)
+console.log(RandomCode)
 //console.log(getRandom());
 
 function CodeRepeatCheck() {
@@ -52,9 +52,9 @@ function CodeRepeatCheck() {
 }
 
 function BullsCheck () {
-    let Bull = 0;
+    var Bull = 0;
     for (var i = 0; i < 4; i++) {
-        if (code.value[i] === RandomCode[i]) {
+        if (code.value[i] == RandomCode[i]) {
             Bull++;
         }
     }
@@ -62,17 +62,21 @@ function BullsCheck () {
 }
 
 function CowsCheck () {
-    let Cow = 0;
+    var Cow = 0;
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
-            if ((code.value[i] === RandomCode[j]) && (i != j)) {
+            if ((code.value[i] == RandomCode[j]) && (i != j)) {
                 Cow++;
             }
         }
     }
     return Cow;
 }
+
+
 submit_btn.addEventListener("click", () => {
+    const bull = BullsCheck();
+    const cow = CowsCheck();
     if (CodeRepeatCheck()) {
         const counter = document.createElement('div');
         const grid_item = document.createElement('div');
@@ -82,12 +86,15 @@ submit_btn.addEventListener("click", () => {
         result.className = 'grid-item';
         grid_item.innerHTML = code.value;
         counter.innerHTML = count++;
-        result.innerHTML = `${BullsCheck()}Bulls ${CowsCheck}Cows`;
+        result.innerHTML = `${bull} Bulls ${cow} Cows`;
         grid.appendChild(counter);
         grid.appendChild(grid_item);
         grid.appendChild(result);
         code.value = "";
     } else {
         alert(`Please enter nonrepeated code`);
+    }
+    if (bull === 4) {
+        alert(`Bingo!`);
     }
 })
