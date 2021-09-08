@@ -91,6 +91,7 @@ submit_btn.addEventListener("click", () => {
         grid.appendChild(grid_item);
         grid.appendChild(result);
         code.value = "";
+        
     } else {
         alert(`Please enter nonrepeated code`);
     }
