@@ -38,17 +38,25 @@ document.addEventListener('DOMContentLoaded', function(){
 console.log(RandomCode)
 //console.log(getRandom());
 
-function CodeRepeatCheck() {
-    let en = false;
-    let prev = code.value[0];
+function CodeRepeatCheck() {  
+    var en = false;
     for (var i = 1; i < 4; i++) {
-        if (code.value[i] === prev) {
-            en = false;
-        } else {
-            en = true;
+        en = false;
+        for (var j = 0; j < i; j++) {
+            if (code.value[j] === code.value[i]) {
+                //console.log(en);
+               // console.log(`repeat`);
+                code.value = "";
+                en = false;
+                return en;
+            } else {
+                en = true;
+            }
         }
     }
+   // console.log(en);
     return en;
+    
 }
 
 function BullsCheck () {
